@@ -15,6 +15,7 @@ class PushNotificationService {
   static Future<void> setupInteractedMessage() async {
     await Firebase.initializeApp();
 
+    // IMP: this is when the app is in background
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       print('uiop: $message');
       print('uiop: ${message.data}');

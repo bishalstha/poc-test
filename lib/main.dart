@@ -7,6 +7,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await PushNotificationService.setupInteractedMessage();
   runApp(const MyApp());
+  // IMP: this is when the app is terminated
   final initialMessage = await FirebaseMessaging.instance.getInitialMessage();
   if (initialMessage != null) {
     final index = initialMessage.data['id'] as String;
